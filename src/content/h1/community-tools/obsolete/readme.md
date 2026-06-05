@@ -15,10 +15,10 @@ thanks:
   Spiral: Providing Bluestreak variants to compare
   TheGhost: Max exporter feature comparisons
 ---
-This page lists old community-made tools which **should not be used anymore** because they have known issues and/or a newer recommended approach exists. With the long history of Halo 1 PC modding, over time our understanding of the engine and tags has grown and new community-made tools phased out older ones.
+This page lists old community-made tools which **should not be used anymore** because they have known issues and/or a newer recommended approach exists. With the long history of Halo 1 PC modding, over time our understanding of the engine and tags has grown and new community-made tools phased out older ones. This page exists for archival purposes and to steer people to alternatives.
 
 {% alert type="danger" %}
-Despite their age, these tools are pervasive in outdated tutorials and forum posts found via search engines. This page exists for archival purposes and to inform people of alternatives. Do not use the tools listed here.
+You may still find these tools mentioned in outdated tutorials or old forum posts.
 {% /alert %}
 
 # Tag extractors

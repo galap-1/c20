@@ -51,11 +51,13 @@ Closing open edges usually involves merging vertices or filling. In Blender you 
 ![](open_edge.mp4)
 
 ## Error: Couldn't update edge (red)
-This error indicates that an edge is shared by _more_ than 2 adjacent faces. This is usually seen where 3 faces meet and share a common edge. Like with open edges, render-only (`!`) and double-sided (`%`) faces don't count.
+This error has a few potential causes:
 
-This is usually fixed by deleting any accidental leftover faces present after stitching together multiple objects (e.g. a base to the ground) and by avoiding connecting the edges of two shapes by a single edge.
+1. More than 2 faces are sharing a common edge. Like with open edges, render-only (`!`) and double-sided (`%`) faces don't count. This is usually fixed by deleting any accidental leftover faces present after stitching together multiple objects (e.g. a base to the ground) and by avoiding connecting the edges of two shapes by a single edge.
+2. Incorrect level [scale](~scale) or extremely thin details; Tool merges together vertices which are very close together (within 0.1 JMS units) and therefore may interpret many faces as sharing a common edge, when in your 3D software they don't. Remember that with default JMS export settings, 1 Blender meter = 1 JMS unit and the Chief is 70 JMS units tall. Make sure you are modeling the level at the correct scale.
+3. You have adjacent faces that suddenly flip face orientation. Make sure the normals of your level are pointed inwards and do not have discontinuities in their orientation. Turn on backface culling in your 3D software to help spot these issues.
 
-Another common cause for this error is incorrect level [scale](~scale); Tool merges together vertices which are very close together (within 0.1 JMS units) and may interpret many faces as sharing a common edge when in Blender they don't. Remember that with default JMS export settings, 1 Blender meter = 1 JMS unit and the Chief is 70 JMS units tall. Make sure you are modeling the level at the correct scale
+Here are some examples of fixing the first case:
 
 ![](couldnt_update_edge.mp4)
 ![](couldnt_update_edge_2.mp4)
@@ -339,7 +341,7 @@ It is totally harmless and just means you have not assigned [background sounds](
 
 # File problems
 ## Error: reached end of file during parse
-This means the JMS file was incomplete or improperly formatted. Tool expected it to have more data but the file ended. You should never see this error unless the JMS exporter addon/script you are using has a bug, in which case you should upgrade it to the latest version or use a different JMS exporter. This error has been known to occur with some 3ds Max scripts.
+This means the JMS file was incomplete or improperly formatted. Tool expected it to have more data but the file ended. You should never see this error unless the JMS exporter addon/script you are using has a bug, in which case you should upgrade it to the latest version or use a different JMS exporter. This error has been known to occur with some older 3ds Max scripts.
 
 ## Error: model file has wrong version number
 Your JMS file was exported for the wrong game version (e.g. Halo 2). If using the [Halo Asset Blender Development Toolset](~halo-asset-blender-development-toolset), pay attention to the export settings and choose Halo CE.
