@@ -27,7 +27,7 @@ When creating a new objective, you will be met with a new Sapien UI, using this 
 Pictured: The UI displayed when creating a new objective, and the box popup when assigning a default zone
 {% /figure %}
 
-The box saying "Add" is what will be used for adding new tasks, you can fill out the objective menu, when a task is selected and a default zone is selected for this objective, the game window will show all firing point areas, from which you can simply click to assign to the selected task.
+The box saying `Add` is what will be used for adding new tasks, you can fill out the objective menu, when a task is selected and a default zone is selected for this objective, the game window will show all firing point areas, from which you can simply click to assign to the selected task.
 
 # Tasks
 
@@ -37,11 +37,11 @@ When changing the order of tasks, with a task selected hold cntrl and then use y
 
 | Task color/text color | Description
 |-------|----------
-| Red overlay | Task is using the 'invalid' flag
-| Light grey overlay | Task is using the 'single use' flag
-| Dark grey overlay | Task is using the 'gate' flag
-| Green outline | Task is using the 'LATCH ON' flag
-| Red outline | Task is using the 'LATCH OFF' flag
+| Red overlay | Task is using the `invalid` flag
+| Light grey overlay | Task is using the `single use` flag
+| Dark grey overlay | Task is using the `gate` flag
+| Green outline | Task is using the `LATCH ON` flag
+| Red outline | Task is using the `LATCH OFF` flag
 | Red task name | Task is currently invalid due to conditions not being met, or the condition script failing to compile
 | Blue condition text | Condition script has been edited but not yet compiled
 | Red condition text | Condition script is invalid, needs to be corrected
@@ -54,7 +54,7 @@ When changing the order of tasks, with a task selected hold cntrl and then use y
 | LATCH OFF | Once this task's conditions are no longer met, this task will disable and will not re-enable, even if the conditions are met
 | Gate | Task is marked as invalid to AI, AI will never enter this task, good option to use with parent tasks so only the children are open to AI
 | Single Use | Once this task has been emptied of all AI after being entered, this task disables and stays disabled
-| Suppress Combat | AI units with the "engage sync" flag enabled in their [style](~) tag will not engage targets unless attacked first, will watch and aim at targets however
+| Suppress Combat | AI units with the `ngage sync` flag enabled in their [style](~) tag will not engage targets unless attacked first, will watch and aim at targets however
 | Active Camo | AI who enter this task become cloaked, and will not decloak unless they exit the task or die
 | Blind | Needs testing
 | Deaf | Needs testing
