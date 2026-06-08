@@ -33,4 +33,4 @@ Within your new task, set the follow policy to your desired option and assign a 
 ![Window view of task properties](taskprop.jpg "Who will the AI follow?")
 
 # The result
-In sapien under the AI section, you can now go to your AI squad and assign them the new objective and task you just made. Save the scenario `Ctrl + S`, do a map reset `Ctrl + R` and place your AI squad down. Observe your results
+In sapien under the AI section, you can now go to your AI squad and assign them the new objective and task you just made. Save the scenario {% key "Ctrl+S" /%}, do a map reset {% key "Ctrl+R" /%} and place your AI squad down. Observe your results.

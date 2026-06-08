@@ -33,7 +33,7 @@ The box saying `Add` is what will be used for adding new tasks, you can fill out
 
 Tasks represent the actual orders the AI is given, for example, telling the AI what firing position zones they are allowed to use and in what configuration, what attitude they should take as well as various properties and scripting variables.
 
-When changing the order of tasks, with a task selected hold cntrl and then use your arrow keys to move the task, left and right may be used to nest and un-nest tasks within parent tasks (child tasks will have higher priority than parent tasks).
+When changing the order of tasks, with a task selected hold *ctrl and then use your arrow keys* to move the task, left and right may be used to nest and un-nest tasks within parent tasks (child tasks will have higher priority than parent tasks).
 
 | Task color/text color | Description
 |-------|----------
@@ -54,7 +54,7 @@ When changing the order of tasks, with a task selected hold cntrl and then use y
 | LATCH OFF | Once this task's conditions are no longer met, this task will disable and will not re-enable, even if the conditions are met
 | Gate | Task is marked as invalid to AI, AI will never enter this task, good option to use with parent tasks so only the children are open to AI
 | Single Use | Once this task has been emptied of all AI after being entered, this task disables and stays disabled
-| Suppress Combat | AI units with the `ngage sync` flag enabled in their [style](~) tag will not engage targets unless attacked first, will watch and aim at targets however
+| Suppress Combat | AI units with the `engage sync` flag enabled in their [style](~) tag will not engage targets unless attacked first, will watch and aim at targets however
 | Active Camo | AI who enter this task become cloaked, and will not decloak unless they exit the task or die
 | Blind | Needs testing
 | Deaf | Needs testing

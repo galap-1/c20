@@ -49,11 +49,11 @@ You can view a complete list of commands by typing tool and pressing enter. Not 
 Opening a level and playing around in it is simple; Open [Sapien](~h2/tools/h2-ek/h2-sapien), a dialog box will prompt you to browse for a [scenario](~), navigate and select your newly created [scenario](~) and open it.
 ![Finding your level in Sapien](scenario.png "Double clicking to open is also an option)
 
-Sapien will begin loading the level, Since it is essentially running the game to do this it may take a while (However you can save time by clicking and dragging around the `loading map` box). When our level has loaded, we will be able to see it in the game window. Arrange the various windows to your liking and press `Ctrl + s` to save [sapien](~h2/tools/h2-ek/h2-sapien) and the [scenario](~). When you close and reopen [sapien](!h2/tools/h2-ek/h2-sapien) (Close Sapien using `Alt + F4` to avoid potential **corruption**), the windows will remain as you left them.
+Sapien will begin loading the level, Since it is essentially running the game to do this it may take a while (However you can save time by clicking and dragging around the `loading map` box). When our level has loaded, we will be able to see it in the game window. Arrange the various windows to your liking and press {% key "Ctrl+s" /%} to save [sapien](~h2/tools/h2-ek/h2-sapien) and the [scenario](~). When you close and reopen [sapien](!h2/tools/h2-ek/h2-sapien) (Close Sapien using {% key "Alt+F4" /%} to avoid potential **corruption**), the windows will remain as you left them.
 ![Sapien open with all of the various windows](sapien.png "Change window position and size to your liking")
 
-Navigate in the game window by selecting it, then holding the middle mouse button and using the WASD keys, use R to ascend and F to descend.
-Press shift to cycle through camera speeds and hold `Ctrl` for speed boost
+Navigate in the game window by selecting it, then holding the middle mouse button and using the {% key "WASD" /%} keys, use {% key "R" /%} to ascend and {% key "F" /%} to descend.
+Press shift to cycle through camera speeds and hold {% key "Ctrl" /%} for speed boost
 
 # Taking a stroll
 Next, we will spawn in and walk around the level as a player, in the `Hierarchy view` window select and expand the `Game Data` folder, select `Starting profiles` and click `New instance`.
@@ -65,9 +65,9 @@ In the properties palette, you can customize the starting equipment for Players
 In the `Hierarchy view`, select and expand `Player starting points`, Select the `none` folder and *right* click in the game window to place a starting point, when playing this level this is where the first player will spawn, add another for player 2.
 ![Navigating to starting points](starting.png "Forgetting these will make levels unplayable")
 
-Next, select the `Player simulation` folder, then in the game window *right* click to place the player character and then press `Tab` to switch to player mode. You can now traverse the level as the player character, Press `Tab` again to leave player simulation.
+Next, select the `Player simulation` folder, then in the game window *right* click to place the player character and then press {% key "Tab" /%} to switch to player mode. You can now traverse the level as the player character, Press {% key "Tab" /%} again to leave player simulation.
 ![Navigating to player simulation](simulation.png "Spawn the player where you click")
 
-Make sure to save your level every time you make changes you want to keep, using `Ctrl + S`. 
+Make sure to save your level every time you make changes you want to keep, using {% key "Ctrl+S" /%}. 
 
 Your next step after you finalize your geometry and have everything imported should be lightmapping.
