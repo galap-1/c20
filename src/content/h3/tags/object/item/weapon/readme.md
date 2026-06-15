@@ -35,7 +35,7 @@ These are general purpose flags that change the behavior of the weapon, more spe
 | cannot fire at max age | Causes weapon to be unable to be fired once it reaches max age
 | secondary trigger overrides grenades | If the secondary trigger key is also bound to grenade throw, this flag forces no grenade throw
 | support weapon | Causes weapon to be dropped when a melee attack is performed and disables grenade throwing
-| AIs use melee damage | Causes [AI](~) to use the melee damage of the weapon instead of their biped melee damage value
+| AIs use melee damage | Causes [AI](~) to use the melee damage of the weapon instead of their [biped](~) melee damage value
 | forces no binoculars | Disables binoculars on weapon, binoculars are separate from weapon zoom
 | loop fp firing animation | Unknown
 | prevents crouching | Prevents players from crouching while this weapon is equipped, not applicable to AI
@@ -49,7 +49,7 @@ These are general purpose flags that change the behavior of the weapon, more spe
 | weapon ages with each kill | Seems to apply to melee weapons only, causes age to be incurred when killing an enemy
 | weapon uses old dual fire error code | When dual wielding and firing a single weapon, use single weapon error value, without flag means use dual wield error value regardless of firing both weapons at the same time or not
 | allows unaimed lunge | Allows melee weapons to play lunge melee animation even when not in range of a target to lunge at
-| cannot be used by player | Weapon cannot be picked up by player, if held is dropped
+| cannot be used by player | Weapon cannot be picked up by player, if previously held is dropped
 | hold fp firing animation | Unknown/Needs additional research
 | strict deviation angle | Enables the ["deviation angle"](~weapon#weapon-aim-assist) field to be enforced when using values less than the ["autoaim angle"](~weapon#weapon-aim-assist), generally this flag and the deviation angle fields are ignored for non-vehicle weapons
 
@@ -62,7 +62,7 @@ These are general purpose flags that change the behavior of the weapon, more spe
 | Fields | Tag/data type | Description
 |-------|----------|--------------
 | maximum alternate shots loaded | short | Unknown/Needs additional research
-| turn on time | real | The time in seconds it takes from the weapon being readied for the function "turned_on" to transition from 0 to 1
+| turn on time | real | The time in seconds it takes after the weapon is readied for the function "turned_on" to transition from 0 to 1
 | ready time | real | Unknown/Needs additional research
 | ready effect | [sound](~) / [effect](~) | Unknown/Needs additional research
 | ready damage effect | [damage_effect](~) / [damage_response_definition](~) | Unknown/Needs additional research
@@ -258,7 +258,7 @@ First entry of this block is for biped type 0 and 2 (spartans), and the second e
 
 # Magazines
 
-Generally, weapons either use **age** or a **ammo** system to limit their total firepower output, this section contains properties for setting up the latter.
+Generally, weapons either use *age* or a *ammo* system to limit their total firepower output, this section contains properties for setting up the latter.
 
 {% alert %}
 First entry into this block will be the primary magazine, second entry will be secondary magazine
@@ -294,8 +294,8 @@ In order to allow these items to be picked up, they must be defined in the [bipe
 
 | Fields | Tags/data types | Description
 |-------|----------|--------------
-| rounds | short | The number of rounds input into the weapon when the below equipment tag is picked up
-| equipment | [equipment](~) | The equipment tag that once the player runs over will input the above value of rounds into the weapon
+| rounds | short | The number of rounds added to the weapons reserve inventory when the below equipment tag is picked up
+| equipment | [equipment](~) | The equipment tag that once the player runs over will add the above value of rounds into the weapon
 
 # New triggers
 
@@ -346,7 +346,7 @@ Prediction properties effect networking for non-host players
 | Autofire | Data type | Description
 |-------|----------|--------------
 | autofire time | real | Unknown: presumably how much controller triggers must be depressed to begin action behavior, also used for latch-autofire to determine time until charging begins after latching
-| autofire throw | real | Unknown, presumably how much controller triggers must be depressed to end action behavior
+| autofire throw | real | Unknown, presumably how much controller triggers must be released to end action behavior
 
 {% alert %}
 Secondary action seems to be when starting the autofire behavior and primary action seems to be when ending it
@@ -371,7 +371,7 @@ This subsection defines advanced trigger properties in relation to weapon chargi
 
 | Fields | Tag/data type | Description
 |-------|----------|--------------
-| charging time | real | The time taken to charge try the trigger to full charge
+| charging time | real | The time taken to charge the trigger to full charge
 | charged time | real | After fully charged, how long the trigger can stay charged until performing it's overcharged action
 | cancelled trigger throw | short | Unknown
 | charged illumination | real | From 0 to 1 what value of illumination as a percentage is given off as the weapon reaches full charge
@@ -398,16 +398,16 @@ Triggers are tied to barrels, barrels themselves are the most important part of 
 | projectiles use weapon origin | Only applicable to players, causes weapon to fire projectiles from the third person weapon trigger markers, rather than the player camera
 | ejects during chamber | Unknown/Unused/Causes 3rd person shotgun ejection port to not open after chambering
 | use error when unzoomed | Causes barrel error values to only be applied when not zoomed with the weapon, zero error when zoomed
-| projectile vector cannot be adjusted | Forces projectiles to emit from the 3rd person weapon trigger marker, in the exact direction the marker is pointing, regardless of player aim or bullet magnetism. Also disables all weapon projectile tracking for all users.
+| projectile vector cannot be adjusted | Forces projectiles to emit from the 3rd person weapon trigger marker, in the exact direction the marker is pointing, regardless of player aim or bullet magnetism and disables all weapon projectile tracking for all users.
 | projectiles have identical error | Unknown/Needs additional research
 | projectiles fire parallel | Unknown/Needs additional research
 | can't fire when others firing | Presumably prevents this barrel from firing while another barrel is firing
 | can't fire when others recovering | Prevents this barrel from firing while another barrel is still recovering with its fire recovery time
 | don't clear fire bit after recovering | This flag acts as toggle on the game allowing your fire inputs to be "saved" during the fire recovery fraction, enabling means save fire inputs during the recovery fraction while disabling means fire input gets set to negative once the recovery fraction ends, even if still holding the trigger. Also disables the ability for spew weapons to use the value of **1** for "shots per fire"
-| staggers fire across multiple markers | Causes weapon to cycle projectile emission point from multiple trigger markers, alternates between 2 markers but for more than 2 markers it seems to pick at random
+| staggers fire across multiple markers | Causes weapon to cycle projectile emission point from multiple trigger markers, cycles in a loop starting from the second trigger marker
 | fires locked projectiles | Forces AI actors using this barrel to only track when targeting a human-tracking type unit, else they self-guide projectiles, unknown otherwise
 | can fire at maximum age | This barrel will continue to be able to fire despite the weapon age being at 0
-| use 1 firing effect per burst | Weapon will only play it's firing effect a single time, all shots after either in a burst or spew will not have a firing effect
+| use 1 firing effect per burst | Weapon will only play its firing effect a single time, all shots after either in a burst or spew will not have a firing effect
 | ignore tracked object | Disables the tracking of this projectile, useful for reusing a tracking projectile on a non-tracking enabled barrel, plasma tracking projectiles with *tracks fired projectile* seem to override this flag and still track targets
 
 ## Firing
