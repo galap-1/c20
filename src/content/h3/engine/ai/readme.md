@@ -73,7 +73,7 @@ Should the resulting scariness favor the other party by a specified value in the
 
 Danger is a set of values defined in the [globals](~) with preset actions that return a value, the AI can then use these values to determine actions such as fleeing, covering or evading.
 
-AI will not register a danger value increase from silently fired projectiles, even if they are modeled and passing less than a WU away, the AI will only register increased danger if they hear the projectile being fired.
+For registering danger based on being fired at/near to, AI will not register a danger value increase from silently fired projectiles, even if they are modeled and passing less than a WU away, the AI will only register increased danger if they hear the projectile being fired.
 
 # Combat status and alertness
 
@@ -141,5 +141,5 @@ Common commands that may be helpful for generalized debugging.
 | ai_render_tracked_props | boolean | Renders the current scariness value this AI perceives from another unit (note this will render *all* units *at once*, so the value will be impossible to read if more than one AI is tracking a single target)
 | ai_render_targets | boolean | Renders a line from AI units onto their current target (or where they *think* their target is)
 | ai_debug_emotions | boolean | Renders the current danger level this AI unit is experiencing
-| ai_render_shooting | boolean | Renders data about how the AI is using their current weapon, like accuracy and rate of fire
+| ai_render_shooting | boolean | Renders data about how the AI is using their current weapon, like accuracy and rate of fire fraction
 | ai_render_status_flags | boolean | Renders data about current behavior flags being set, useful for debugging if an AI is berserking
